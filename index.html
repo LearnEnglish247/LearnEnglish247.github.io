@@ -486,12 +486,51 @@
 <section class="section tutoring-image">
     <div class="container">
         <picture>
-            <!-- Optional WebP if you create/upload one -->
-            <source srcset="iStock-1443498173.jpg" type="image/jpg">
+            <!-- Corrected type, but WebP not needed unless uploaded -->
+            <source srcset="iStock-1443498173.jpg" type="image/jpeg">
             <img src="iStock-1443498173.jpg" alt="Teacher guiding a student during an English tutoring session" class="tutoring-contained-image" loading="lazy">
         </picture>
     </div>
 </section>
+
+<style>
+    /* Target the tutoring image section */
+    .section.tutoring-image {
+        padding: 0; /* Remove padding to allow edge-to-edge */
+        margin: 0;  /* Remove margins */
+        width: 100%; /* Ensure full section width */
+    }
+
+    .container {
+        max-width: 100%; /* Override any fixed width */
+        padding: 0;     /* Remove container padding on mobile */
+        margin: 0;      /* Remove margins */
+        width: 100vw;   /* Extend to viewport width */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); /* Center the container */
+    }
+
+    .tutoring-contained-image {
+        width: 100%;    /* Make image full width of container */
+        height: auto;   /* Maintain aspect ratio */
+        display: block; /* Avoid inline spacing */
+        object-fit: cover; /* Fill the space, cropping if needed */
+    }
+
+    /* Mobile-specific adjustment (up to 768px for phones) */
+    @media (max-width: 768px) {
+        .section.tutoring-image .container {
+            width: 100vw; /* Ensure full viewport width */
+            margin-left: calc(-50vw + 50%); /* Fine-tune centering */
+            margin-right: calc(-50vw + 50%);
+        }
+
+        .tutoring-contained-image {
+            max-height: 400px; /* Optional: limit height to avoid stretching too much */
+        }
+    }
+</style>
 
         <!-- Trust Section -->
         <section class="section trust-section">
