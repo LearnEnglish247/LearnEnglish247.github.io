@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"> <!-- Changed to Spanish as default language -->
+<html lang="es"> <!-- Spanish as default language -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     
-    <!-- Schema Markup (Updated to Spanish) -->
+    <!-- Schema Markup (Updated to Spanish, includes Oposiciones) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -52,7 +52,6 @@
     </script>
 
     <style>
-        /* CSS remains unchanged except for removing language selector styling */
         :root {
             --navy: #001f3f;
             --scarlet: #FF3030;
@@ -85,7 +84,7 @@
             padding: 0 20px;
         }
 
-        /* Navigation (Removed language selector styling) */
+        /* Navigation */
         nav {
             background: var(--white);
             padding: 1rem;
@@ -101,6 +100,33 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Reinstated language selector styling */
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .language-btn {
+            background: none;
+            border: 2px solid var(--navy);
+            border-radius: 5px;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .language-btn.active {
+            background: var(--navy);
+            color: var(--white);
         }
 
         .nav-links {
@@ -133,7 +159,7 @@
             font-weight: 500;
         }
 
-        /* Hero Section (Unchanged) */
+        /* Hero Section */
         .hero {
             background: var(--white);
             text-align: center;
@@ -152,7 +178,7 @@
             margin-bottom: 2rem;
         }
 
-        /* About, Tutoring Image, Trust, Testimonials, Services, FAQ, Contact Sections (Unchanged styling) */
+        /* About, Tutoring Image, Trust, Testimonials, Services, FAQ, Contact Sections */
         .about, .tutoring-image, .trust-section, .testimonials, .services, .faq, .contact {
             /* Same as original */
         }
@@ -200,13 +226,30 @@
             font-size: 1.2rem;
         }
 
+        /* Contact Form Styling (Restored from original) */
         .contact-form {
             max-width: 600px;
             margin: 2rem auto 0;
         }
 
-        .contact-form label, input, textarea, button {
-            /* Same as original */
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--navy);
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            display: block;
+            margin: 0 auto;
         }
 
         .section h2 {
@@ -272,13 +315,13 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Remove language-btn focus styles (no longer needed) */
-        .nav-links a:focus, .btn:focus, .float-whatsapp:focus, summary:focus {
+        /* Reinstated language-btn focus styles */
+        .language-btn:focus, .nav-links a:focus, .btn:focus, .float-whatsapp:focus, summary:focus {
             outline: 3px solid var(--scarlet);
             outline-offset: 2px;
         }
 
-        /* Responsive Adjustments (Unchanged) */
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .section {
                 padding: 2rem 1rem;
@@ -336,9 +379,13 @@
     </style>
 </head>
 <body>
-    <!-- Navigation (Removed language selector) -->
+    <!-- Navigation (Reinstated language selector with Spanish and English) -->
     <nav role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
+            <div class="language-selector">
+                <button class="language-btn active" data-lang="es" aria-label="Cambiar a Español">🇪🇸</button>
+                <button class="language-btn" data-lang="en" aria-label="Switch to English">🇬🇧</button>
+            </div>
             <div class="nav-links">
                 <a href="#services" data-i18n="nav-services">Servicios</a>
                 <a href="#contact" data-i18n="nav-contact">Contacto</a>
@@ -362,7 +409,7 @@
         <!-- About Section -->
         <section class="section about">
             <div class="container">
-                <p data-i18n="about-text">Soy Mark, un tutor nativo de inglés certificado por TEFL, con sede en Oviedo, España, y más de 10 años de experiencia, ofreciendo clases de inglés personalizadas para principiantes hasta estudiantes avanzados. Me especializo en ayudar a los estudiantes a alcanzar la fluidez, aprobar exámenes como IELTS y TOEFL, Oposiciones, o destacar en inglés profesional.</p>
+                <p data-i18n="about-text">Soy Mark, un tutor nativo de inglés certificado por TEFL, con sede en Oviedo, España, y más de 10 años de experiencia, ofreciendo clases de inglés personalizadas para principiantes hasta estudiantes avanzados. Me especializo en ayudar a los estudiantes a alcanzar la fluidez, aprobar exámenes como IELTS, TOEFL, Oposiciones, o destacar en inglés profesional.</p>
             </div>
         </section>
 
@@ -483,11 +530,15 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section (Restored to original alignment) -->
         <section id="contact" class="section contact">
             <div class="container">
                 <h2 data-i18n="contact-title">¿Listo para Empezar a Aprender?</h2>
                 <p data-i18n="contact-text">Contáctame para programar tu consulta gratis hoy.</p>
+                <div class="contact-info">
+                    <p></p>
+                    <p></p>
+                </div>
                 <form class="contact-form" action="https://formspree.io/f/xrbanelr" method="POST">
                     <label for="name" data-i18n="form-name-label">Nombre:</label>
                     <input type="text" id="name" name="name" required>
@@ -513,14 +564,14 @@
     <script>
         const translations = {
             es: {
-                'meta-description': 'Tutorías personalizadas de inglés. Aprende a hablar, escribir y prepararte para exámenes (IELTS, TOEFL).',
+                'meta-description': 'Tutorías personalizadas de inglés. Aprende a hablar, escribir y prepararte para exámenes (IELTS, TOEFL, Oposiciones).',
                 'nav-services': 'Servicios',
                 'nav-contact': 'Contacto',
                 'hero-title': 'Domina el Inglés con Clases Personalizadas',
                 'hero-subtitle': 'Lecciones Adaptadas para Todos los Niveles',
                 'hero-text': 'Mejora tu habla, escritura y confianza con orientación experta.',
                 'hero-cta': 'Reserva una Consulta Gratis',
-                'about-text': 'Soy Mark, un tutor nativo de inglés certificado por TEFL, con sede en Oviedo, España, y más de 10 años de experiencia, ofreciendo clases de inglés personalizadas para principiantes hasta estudiantes avanzados. Me especializo en ayudar a los estudiantes a alcanzar la fluidez, aprobar exámenes como IELTS y TOEFL, o destacar en inglés profesional.',
+                'about-text': 'Soy Mark, un tutor nativo de inglés certificado por TEFL, con sede en Oviedo, España, y más de 10 años de experiencia, ofreciendo clases de inglés personalizadas para principiantes hasta estudiantes avanzados. Me especializo en ayudar a los estudiantes a alcanzar la fluidez, aprobar exámenes como IELTS, TOEFL, Oposiciones, o destacar en inglés profesional.',
                 'trust-title': '¿Por Qué Elegirme?',
                 'trust-personalized-title': 'Lecciones Personalizadas',
                 'trust-personalized-text': 'Planes adaptados a tus metas únicas',
@@ -543,7 +594,7 @@
                 'services-general-item1': 'Clase individual (50 min): €12 (Prueba: €9)',
                 'services-general-item2': 'Paquetes: 5 clases: €57 (€11.40/clase, ~5% descuento); 10 clases: €108 (€10.80/clase, ~10% descuento)',
                 'services-general-item3': 'Ideal para principiantes e intermedios buscando fluidez.',
-                'services-exam-title': 'Preparación de Exámenes (IELTS, TOEFL, Cambridge)',
+                'services-exam-title': 'Preparación de Exámenes (IELTS, TOEFL, Cambridge, Oposiciones)',
                 'services-exam-price': 'Obtén mejores puntajes con estrategias y pruebas prácticas.',
                 'services-exam-item1': 'Clase individual (50 min): €14 (Prueba: €10)',
                 'services-exam-item2': 'Paquetes: 5 clases: €67 (€13.40/clase, ~5% descuento); 10 clases: €126 (€12.60/clase, ~10% descuento) + Prueba simulada gratis',
@@ -567,12 +618,70 @@
                 'form-message-label': 'Mensaje:',
                 'form-submit': 'Enviar Mensaje',
                 'whatsapp-text': 'Chat Rápido'
+            },
+            en: {
+                'meta-description': 'Personalised English tutoring. Learn speaking, writing, and exam prep (IELTS, TOEFL, Oposiciones).',
+                'nav-services': 'Services',
+                'nav-contact': 'Contact',
+                'hero-title': 'Master English with Personalised Tutoring',
+                'hero-subtitle': 'Tailored Lessons for All Levels',
+                'hero-text': 'Boost your speaking, writing, and confidence with expert guidance.',
+                'hero-cta': 'Book a Free Consultation',
+                'about-text': 'I’m Mark, a TEFL-certified native English tutor based in Oviedo, Spain, with over 10 years of experience, offering personalised English lessons for beginners up to advanced learners. I specialise in helping students achieve fluency, pass exams like IELTS, TOEFL, Oposiciones, or excel in professional English.',
+                'trust-title': 'Why Choose to Study with Me?',
+                'trust-personalized-title': 'Personalised Lessons',
+                'trust-personalized-text': 'Tailored plans to meet your unique goals',
+                'trust-expertise-title': 'Certified Expertise',
+                'trust-expertise-text': 'TEFL certified tutor',
+                'trust-scheduling-title': 'Flexible Scheduling',
+                'trust-scheduling-text': 'Online or in-person, at your convenience',
+                'trust-results-title': 'Proven Results',
+                'trust-results-text': 'Guided countless students to achieve their goals in English',
+                'testimonials-title': 'What Students Say',
+                'testimonial1-text': '"Thanks to these lessons, I passed my IELTS with a 7.5!"',
+                'testimonial1-name': '- Maria, Spain',
+                'testimonial2-text': '"My confidence in Business English has skyrocketed."',
+                'testimonial2-name': '- Ji-hoon, Korea',
+                'testimonial3-text': '"The personalised approach made learning so easy!"',
+                'testimonial3-name': '- Ana, UK',
+                'services-title': 'English Tutoring Services',
+                'services-general-title': 'General English',
+                'services-general-price': 'Build confidence in conversation, grammar, vocabulary, reading, and writing.',
+                'services-general-item1': 'Single Lesson (50 min): €12 (Trial: €9)',
+                'services-general-item2': 'Package Deals: 5 lessons: €57 (€11.40/lesson, ~5% off); 10 lessons: €108 (€10.80/lesson, ~10% off)',
+                'services-general-item3': 'Perfect for beginners to intermediates aiming for fluency.',
+                'services-exam-title': 'Exam Preparation (IELTS, TOEFL, Cambridge, Oposiciones)',
+                'services-exam-price': 'Score higher with targeted strategies and practice tests.',
+                'services-exam-item1': 'Single Lesson (50 min): €14 (Trial: €10)',
+                'services-exam-item2': 'Package Deals: 5 lessons: €67 (€13.40/lesson, ~5% off); 10 lessons: €126 (€12.60/lesson, ~10% off) + Free mock test',
+                'services-exam-item3': 'Customised for exam success with focused feedback.',
+                'services-business-title': 'Business English',
+                'services-business-price': 'Master professional communication for career growth.',
+                'services-business-item1': 'Single Lesson (50 min): €14 (Trial: €10)',
+                'services-business-item2': 'Package Deals: 5 lessons: €67 (€13.40/lesson, ~5% off); 10 lessons: €126 (€12.60/lesson, ~10% off) + Free email template kit',
+                'services-business-item3': 'Learn presentations, emails, and workplace English.',
+                'faq-title': 'Frequently Asked Questions',
+                'faq-q1': 'How do I book a lesson?',
+                'faq-a1': 'Send me a message via the form or quick chat button below to schedule a free consultation.',
+                'faq-q2': 'What’s included in General English?',
+                'faq-a2': 'General English covers grammar, vocabulary, conversation, and reading/writing skills.',
+                'faq-q3': 'Do you offer in-person lessons in Oviedo?',
+                'faq-a3': 'Yes, flexible scheduling for online or in-person lessons in Oviedo, Spain.',
+                'contact-title': 'Ready to Start Learning?',
+                'contact-text': 'Get in touch to schedule your free consultation today!',
+                'form-name-label': 'Name:',
+                'form-email-label': 'Email:',
+                'form-message-label': 'Message:',
+                'form-submit': 'Send Message',
+                'whatsapp-text': 'Quick Chat'
             }
         };
 
-        // Simplified JavaScript: Set Spanish as default without language toggle
-        function setLanguage() {
-            const lang = 'es';
+        function setLanguage(lang) {
+            if (!translations[lang]) {
+                console.error(`Language ${lang} not found, falling back to Spanish`);
+                lang = 'es';
+            }
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 element.textContent = translations[lang][key] || key;
@@ -580,12 +689,28 @@
             document.documentElement.lang = lang;
             document.querySelector('meta[name="description"]').setAttribute('content', 
                 translations[lang]['meta-description']);
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            try {
+                localStorage.setItem('language', lang);
+            } catch (e) {
+                console.warn('localStorage not available');
+            }
         }
 
-        // Load Spanish content on page load
-        window.onload = setLanguage;
+        document.querySelectorAll('.language-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
 
-        // Register Service Worker for PWA (Unchanged)
+        // Load Spanish as default, or saved language from localStorage
+        const savedLang = localStorage.getItem('language') || 'es';
+        setLanguage(savedLang);
+
+        // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
